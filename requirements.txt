@@ -1,0 +1,9 @@
+oauth2client
+ib_insync
+IbPy2
+ibapi
+pandas
+matplotlib
+requests
+numpy
+gspread
