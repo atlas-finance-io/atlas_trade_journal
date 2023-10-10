@@ -4,6 +4,7 @@ from ibapi.contract import Contract
 from ibapi.execution import ExecutionFilter
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+import time
 
 
 class IBapi(EWrapper, EClient):
@@ -21,7 +22,7 @@ class IBapi(EWrapper, EClient):
             execution.price,
             execution.side
         ]
-        print(contract)
+        print(execution)
         self.sheet.append_row(trade_data)
 
 
@@ -46,3 +47,7 @@ app.reqExecutions(1, ExecutionFilter())
 
 # Run the loop
 app.run()
+
+time.sleep(5)
+
+app.disconnect()
